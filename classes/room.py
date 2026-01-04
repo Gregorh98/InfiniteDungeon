@@ -2,7 +2,7 @@ from lookups import LightLevel, RoomSize
 
 
 class Room:
-    def __init__(self, root, x, y, descriptor, size=RoomSize.Medium, additional_description_detail=None, enemies=None, loot=None, light_level=LightLevel.NORMAL, is_interior=False):
+    def __init__(self, root, x, y, descriptor, size=RoomSize.Medium, additional_description_detail=None, enemies=None, loot=None, light_level=LightLevel.BRIGHT, is_interior=False):
         self._root = root
         self._x = x
         self._y = y
@@ -23,7 +23,7 @@ class Room:
 
     @property
     def description(self):
-        return f"You are standing in a {self._size}, {self.light_level}, {self._descriptor}. {self._additional_description_detail}. {self._get_enemy_description_string()}"
+        return f"You are standing in a {self._size.name.lower()}, {self.light_level}, {self._descriptor}. {self._additional_description_detail}."
 
     @property
     def coords(self):

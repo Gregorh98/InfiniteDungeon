@@ -17,14 +17,14 @@ class Player:
 
     def move(self, direction):
         match (direction):
-            case Directions.North:
+            case Directions.north:
                 self.y -= 1
-            case Directions.South:
+            case Directions.south:
                 self.y += 1
-            case Directions.East:
+            case Directions.east:
                 self.x += 1
-            case Directions.West:
-                self.y -= 1
+            case Directions.west:
+                self.x -= 1
             case _:
                 raise InvalidDirectionException(direction)
 
